@@ -9,7 +9,7 @@ export class CoffeeGenerator {
     this.coffeeList = valueGenerator.generateValues();
   }
 
-  randomCoffee() {
+  randomCoffee(): any {
     return this.coffeeList[Math.floor(Math.random() * this.coffeeList.length)];
   }
 }

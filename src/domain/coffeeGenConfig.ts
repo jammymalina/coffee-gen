@@ -1,5 +1,7 @@
+import { GenerateValueFunction } from "./generateValueFunction";
+
 export interface CoffeeGenConfig {
   identifiers?: {
-    [identifierName: string]: any;
+    [identifierName: string]: GenerateValueFunction;
   };
 }

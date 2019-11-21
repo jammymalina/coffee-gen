@@ -10,10 +10,20 @@ export class BasicCoffeeValueGenerator implements CoffeeValueGenerator {
   }
 
   public generateValues(): any {
-    if (!this.config.identifiers) {
+    const additionalIdentifiers = Object.entries(this.config.identifiers || {});
+    if (additionalIdentifiers.length === 0) {
       return CoffeeRepository.listCoffeeDrinks();
     }
-    // TODO: You know what must be done
-    return CoffeeRepository.listCoffeeDrinks();
+
+    const coffeeList = CoffeeRepository.listCoffeeDrinks();
+    return coffeeList.map(coffee =>
+      additionalIdentifiers.reduce(
+        (coffeeItem, [id, genFunction]) => ({
+          [id]: genFunction(),
+          ...coffeeItem,
+        }),
+        { coffee }
+      )
+    );
   }
 }

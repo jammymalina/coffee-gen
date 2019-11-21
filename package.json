@@ -1,6 +1,6 @@
 {
   "name": "coffee-gen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -41,5 +41,9 @@
     "source-map-support": "^0.5.16",
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@types/uuid": "^3.4.6",
+    "uuid": "^3.3.3"
   }
 }
