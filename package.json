@@ -1,0 +1,45 @@
+{
+  "name": "coffee-gen",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && npm run test && tsc",
+    "prepare": "npm run build",
+    "test": "mocha -r ts-node/register test/unit/**/*.ts",
+    "coverage": "nyc npm run test",
+    "lint": "eslint './{src,test}/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jammymalina/coffee-gen.git"
+  },
+  "keywords": [
+    "coffee",
+    "generator",
+    "random",
+    "road"
+  ],
+  "author": "Jakub Jantosik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jammymalina/coffee-gen/issues"
+  },
+  "homepage": "https://github.com/jammymalina/coffee-gen#readme",
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^0.1.3",
+    "@types/chai": "^4.2.5",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.11",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.6.0",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "prettier": "^1.19.1",
+    "source-map-support": "^0.5.16",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  }
+}
